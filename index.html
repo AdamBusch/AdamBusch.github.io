@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List App</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body id="page_body">
+
+<div data-role="page" id="home" data-theme="b"><!-- Page !-->
+<header data-role="header">
+    <h1>FTC Rulebook</h1>
+</header>
+<article data-role="content" id="mainList">
+    <ul data-role="listview" data-filter="true" data-filter-placeholder="Search..." id="listView"></ul>
+</article>
+</div> <!-- Page !-->
+
+<script src = "js/loadRules.js"></script>
+
+</body>
+</html>

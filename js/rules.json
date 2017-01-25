@@ -1,0 +1,79 @@
+[
+  {
+    "id":"G1",
+    "name": "Drive Team",
+    "filter": "general game rules",
+    "content": "Each Drive Team shall include up to two Drivers and one Coach. Electronic communications (cell phone, two-way radio, Wi-Fi, Bluetooth, etc.) by Drive Team members after an Alliance has been called from the queue to the Playing Field for its Match are not allowed. The first instance of violating this rule will result in a warning, with any following instances during the tournament resulting in a Minor Penalty. Items that may be mistaken by a casual observer as being in violation should not be brought to the Playing Field. The Driver Station is exempt from this rule, but must be used only for operating the Robot."
+  },
+
+  {
+    "id":"G2",
+    "name": "Pre-Match Robot Setup",
+    "filter": "general game rules",
+    "content": "At the beginning of a Match, each Alliance Robot must be set up on the\nPlaying Field in accordance with section 1.5.1 Pre-Match. After Robots have been set up on the Playing\nField, Drive Teams are required to stand Completely Inside the Alliance Station at the location (Station one or\nStation two) specified by the Qualification Match schedule.\na. During the Qualification Matches, the Blue Alliance Robots are set up on the Playing Field first\nunless the Red Alliance waives their right to set up on the Playing Field second.\nb. During the Elimination Matches, the lower seeded (e.g. 3rd seed is lower than 2nd seed) Alliance\nRobots are set up on the Playing Field first, unless the higher seeded Alliance waives their right\nto set up on the Playing Field second. Alliance color doesn’t change the seeding of a Team\nduring the Elimination Matches. If the 4th seed defeats the 1st seed in the Semi-Finals, they will\nstill have to place their Robot on the field first in the Finals because their seeding will be lower\nthan the 2nd or 3rd seed.\nc. Teams may implicitly waive their right to place their Robots on the Playing Field last by placing\ntheir Robots on the Playing Field before or in conjunction with the opposing Alliance. There is no\nneed to notify the referees; Teams waive their right by the act of placing their Robots on the\nPlaying Field.\nd. Teams that unnecessarily delay the beginning of a Match and/or field reset will incur a Minor\nPenalty for each offense."
+  },
+
+  {
+    "id":"G3",
+    "name": "Robot Starting Volume",
+    "filter": "general game rules",
+    "content": "Before the start of a Match, each Robot in its starting location must not\nexceed a volume of 45.7cm (18 inches) wide by 45.7cm (18 inches) long by 45.7cm (18 inches) tall. The\nAlliance identification flag and pre-loaded Scoring Elements may extend Outside the 45.7cm (18 inches) cube\nvolume constraint. An offending Robot will be Disabled and powered off for the Match at the Head Referee’s\ndiscretion and must remain on the Playing Field in its starting location for the length of the Match. After the\nstart of a Match, the Robot may extend in any dimension unless restricted by the Game-Specific Rules detailed\nin Section 1.6.3."
+  },
+
+  {
+    "id":"G4",
+    "name": "Robot Setup Alignment Devices",
+    "filter": "general game rules",
+    "content":"Alignment devices are allowed during pre-Match setup if they are\nconstructed from legal components, they are part of the Robot, and remain Completely Inside the 45.7cm\n(18 inches) cube starting volume constraint during the set up process. A Minor Penalty will be assessed to\nthe Team for violation of this rule.\n\nThe intent of this rule is to prohibit the use of devices external to the Robot and to prevent the extension of\nany object or tool Outside the 45.7cm (18 inches) cube starting volume. Humans standing on the other side\nof the field to aide in aligning the Robot are not allowed."
+  },
+
+  {
+    "id":"G5",
+    "name": "Alliance Station",
+    "filter": "general game rules",
+    "content":"During a Match, the Drivers and Coach must remain Completely Inside their\nAlliance Station. The first instance of leaving the Alliance Station will result in a warning, with any following\ninstances resulting in a Minor Penalty. Leaving the Alliance Station for safety reasons will not result in a\nwarning or Penalty"
+  },
+
+  {
+    "id":"G6",
+    "name": "Starting Game Play Early",
+    "filter": "general game rules",
+    "content":"Robots that start play of the game (Autonomous or Driver-Controlled\nPeriod) prior to competition personnel announcing the start of a Match period receive a Minor Penalty.\nReferees have the option of issuing a Major Penalty in place of the Minor Penalty if the early start results in\na competitive advantage for the offending Alliance. "
+  },
+
+  {
+    "id":"G7",
+    "name": "Late Start of the Autonomous Period",
+    "filter": "general game rules",
+    "content":"Teams participating in the Autonomous Period are\nexpected to press the ”start with 30-second” button on their Driver Station Android Device and then place\nthe Driver Station in a hands-off location without delay when field personnel signal the start of the\nAutonomous Period. A Minor Penalty is assessed for violating this rule. Referees have the option of issuing\na Major Penalty in place of the Minor Penalty if the late start results in a competitive advantage for the\noffending Alliance."
+  },
+
+  {
+    "id":"G8",
+    "name": "Starting Game Play Early",
+    "filter": "general game rules",
+    "content":"Robots that do not stop playing the game at the end of the Autonomous\nor Driver-Controlled Periods when competition personnel or timer software announce the end of a Match\nperiod receive a Minor Penalty and the actions of the Robot occurring after the end of a Match period do not\ncount towards their Alliance’s Score. Referees have the option of issuing a Major Penalty in place of the\nMinor Penalty if the late stop results in a competitive advantage (other than Scoring) for the offending\nAlliance. "
+  },
+
+  {
+    "id":"G9",
+    "name": "Drive Team Contact with the Playing Field or Robot",
+    "filter": "general game rules",
+    "content": "During a Match, the Drivers and Coaches\nare prohibited from making contact with the Playing Field, any Game Element, or any Robot. The first\ninstance of contact will result in a warning, with any following instances resulting in a Minor Penalty. Contact\nthat affects Scoring and/or game play will result in issuance of a Yellow Card at the discretion of the\nreferees. Contact with the Playing Field, a Game Element, or a Robot for safety reasons will not result in a\nwarning or Penalty."
+  },
+
+  {
+    "id":"G10",
+    "name": "Autonomous to Driver-Controlled Period Transition",
+    "filter": "general game rules",
+    "content":"At the conclusion of the Autonomous\nPeriod the Head Referee at his or her discretion will untangle Robots, place Robots on their drivetrains,\nmake minor adjustments to Robot position, etc. so that the Robots can participate in the Driver-Controlled\nportion of the Match. The referees will do this after finding out from the Drive Team where the best place is\nto touch their Robot to be moved or lifted. At this time, if a Robot has lost its Wi-Fi Direct connection to the\nTeam’s Driver Station or if it is locked-up, the Robot Controller can be restarted and power to the Robot may\nbe reset under supervision of the Field Technical Advisor as long as the Match is not extraordinarily\ndelayed. If the Robot is not controllable after attempts to get it working with the Team’s Driver Station, it will\nbe Disabled and remain in place on the Playing Field for the remainder of the Match.\nWhen instructed by field personnel to do so, Drive Teams may use their Driver Station to select an Op\nMode, initialize, start, and reset their Robot as appropriate. See Section 1.5 – Game Play for details."
+  },
+
+  {
+    "id":"G11",
+    "name": "Drive Team Coach Driver Station Control ",
+    "filter": "general game rules",
+    "content":"During the Driver-Controlled Period, Robots must be\nremotely operated only by the Drivers using the Gamepads connected to the Team’s Driver Station and/or by\nsoftware running in the on-board Robot control system. The first instance of Coach controlling (e.g. operating\na Gamepad) will result in a warning, with any following instances resulting in a Major Penalty. During the\nDriver-Controlled Period, Drive Team Coaches and/or Drivers are allowed to hold the Team’s Driver Station\nAndroid Device and interact with it to select an Op Mode, view information displayed on the screen, and\ninitialize, start, stop, and reset the Robot."
+  }
+
+]
