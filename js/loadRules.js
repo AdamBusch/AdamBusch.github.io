@@ -71,9 +71,9 @@ function generatePage(rule) {
         out += rule.points.toString().includes("m2") ? "<td>5pts + 5pts every 5 seconds</td>" : "";
         out += rule.points.toString().includes("M1") ? "<td>50pts.</td>" : "";
         out += rule.points.toString().includes("M2") ? "<td>100pts.</td>" : "";
-        out += rule.points.toString().includes("cp") ? "<td>Yellow Card at Referee Discretion</td>" : "";
-        out += rule.points.toString().includes("cy") ? "<td>Immediate Yellow Card</td>" : "";
-        out += rule.points.toString().includes("cyr") ? "<td>Immediate Yellow and Red Card</td>" : "";
+        out += rule.points.toString().includes("cp") ? "<td>Possible Yellow Card</td>" : "";
+        out += rule.points.toString().includes("cy") ? "<td>Yellow Card</td>" : "";
+        out += rule.points.toString().includes("cyr") ? "<td>Yellow/Red Card</td>" : "";
 
 
 
