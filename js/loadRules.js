@@ -65,6 +65,7 @@ function generatePage(rule) {
         out += rule.points.toString().includes("m") ? "<th>Minor Penalty</th>" : "";
         out += rule.points.toString().includes("M") ? "<th>Major Penalty</th>" : "";
         out += rule.points.toString().includes("c") ? "<th>Card Issued</th>" : "";
+        out += rule.points.toString().includes("n") ? "<th>Points Issued</th>" : "";
 
         out += '</tr></thead><tbody><tr>';
         // Content
@@ -75,7 +76,8 @@ function generatePage(rule) {
         out += rule.points.toString().includes("M2") ? "<td>100pts.</td>" : "";
         out += rule.points.toString().includes("cp") ? "<td>Possible Yellow Card</td>" : "";
         out += rule.points.toString().includes("cy") ? "<td>Yellow Card</td>" : "";
-        out += rule.points.toString().includes("cyr") ? "<td>Yellow/Red Card</td>" : "";
+        out += rule.points.toString().includes("cr") ? "<td>Yellow/Red Card</td>" : "";
+        out += rule.points.toString().includes("nj") ? "<td>Particle Points</td>" : rule.points.toString().includes("n")? "<td>None</td>" :"";
 
 
 
