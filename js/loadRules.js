@@ -4,7 +4,7 @@ $(function () {
     $('#listView').empty();
     $('#listView').append("<li data-role=\"list-divider\">Saftey Rules</li>");
 
-    // Load S rules
+    // Load S rules yay!
     $.getJSON("js/sRules.json", function (rules) {
         $.each(rules, function (i, rule) {
             $('#listView').append(generateRule(rule));
