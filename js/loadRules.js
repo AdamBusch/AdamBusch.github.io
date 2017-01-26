@@ -11,33 +11,32 @@ $(function () {
             $('#page_body').append(generatePage(rule));
         });
         $('#listView').append("<li data-role=\"list-divider\">General Game Rules</li>");
-        //
-        // // Load G rules
-        // $.getJSON("js/gRules.json", function (rules) {
-        //     $.each(rules, function (i, rule) {
-        //         $('#listView').append(generateRule(rule));
-        //         $('#page_body').append(generatePage(rule));
-        //     });
-        //     $('#listView').append("<li data-role=\"list-divider\">Game Specific Rules</li>");
-        //
-        //     // Load GS rules
-        //     $.getJSON("js/gsRules.json", function (rules) {
-        //
-        //         $.each(rules, function (i, rule) {
-        //             $('#listView').append(generateRule(rule));
-        //             $('#page_body').append(generatePage(rule));
-        //         });
+
+        // Load G rules
+        $.getJSON("js/gRules.json", function (rules) {
+            $.each(rules, function (i, rule) {
+                $('#listView').append(generateRule(rule));
+                $('#page_body').append(generatePage(rule));
+            });
+            $('#listView').append("<li data-role=\"list-divider\">Game Specific Rules</li>");
+
+            // Load GS rules
+            $.getJSON("js/gsRules.json", function (rules) {
+
+                $.each(rules, function (i, rule) {
+                    $('#listView').append(generateRule(rule));
+                    $('#page_body').append(generatePage(rule));
+                });
                 // Refresh view
                 $('#listView').listview('refresh');
                 // Show
                 $('#mainList').slideDown(1000, function () {
                     $('#footer').show(2000);
-                //});
-            //});
-        //});
+                });
+            });
+        });
     });
 
-    });
 });
 
 function generateRule(rule) {
