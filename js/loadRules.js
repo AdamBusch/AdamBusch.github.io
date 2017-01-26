@@ -1,7 +1,6 @@
 $(function () {
     $('#mainList').hide();
     $('#footer').hide();
-
     $('#listView').empty();
     $('#listView').append("<li data-role=\"list-divider\">Saftey Rules</li>");
 
