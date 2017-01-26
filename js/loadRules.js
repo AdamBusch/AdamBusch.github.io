@@ -55,7 +55,7 @@ function generatePage(rule) {
 
     var out = '<div data-role=\"page\" id=\"'+rule.id+'\" data-theme=\"b\"> \n' +
         '<header data-role=\"header\"> <a href=\"#home\" data-icon=\"grid\" data-iconpos=\"notext\" data-transition=\"slidedown\">Home</a>\n' +
-        ' <h1>&#60;'+rule.id+'&#62;</h1> </header> <article data-role=\"content\"> <h1>'+rule.name+'</h1>'+rule.content.replaceAll("\n", " ")+'</article>';
+        ' <h1>&#60;'+rule.id+'&#62;</h1> </header> <article data-role=\"content\"> <h1>'+rule.name+'</h1>'+rule.content.replaceAll("\n", " ").replaceAll('<G', '&#60;G')+'</article>';
 
     if(rule.hasOwnProperty('points')){
         out += '<div role="main" class="ui-content"><h1>Possible Penalties</h1>';
