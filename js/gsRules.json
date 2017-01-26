@@ -3,7 +3,8 @@
     "id":"GS1",
     "name": "Controlling/Possessing Particles",
     "filter": "game specific rules",
-    "content": "Once a Match begins, a Robot may Control or Possess any\nquantity of their Alliance’s Particles."
+    "content": "Once a Match begins, a Robot may Control or Possess any\nquantity of their Alliance’s Particles.",
+    "points":"w1m2"
   },
 
   {

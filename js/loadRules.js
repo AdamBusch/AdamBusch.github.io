@@ -51,7 +51,36 @@ String.prototype.replaceAll = function(search, replacement) {
 function generatePage(rule) {
     //return '<a href=\"#'+rule.id+'\" data-transition=\"slideup\"><h1>&#60;'+rule.id+'&#62; '+rule.name+'</h1></a>';
 
-    return'<div data-role=\"page\" id=\"'+rule.id+'\" data-theme=\"b\"> \n' +
+    var out = '<div data-role=\"page\" id=\"'+rule.id+'\" data-theme=\"b\"> \n' +
         '<header data-role=\"header\"> <a href=\"#home\" data-icon=\"grid\" data-iconpos=\"notext\" data-transition=\"slidedown\">Home</a>\n' +
-        ' <h1>&#60;'+rule.id+'&#62;</h1> </header> <article data-role=\"content\"> <h1>'+rule.name+'</h1>'+rule.content.replaceAll("\n", " ")+'</article> </div>';
+        ' <h1>&#60;'+rule.id+'&#62;</h1> </header> <article data-role=\"content\"> <h1>'+rule.name+'</h1>'+rule.content.replaceAll("\n", " ")+'</article>';
+
+    if(rule.hasOwnProperty('points')){
+        out += '<div role="main" class="ui-content"><h1>Possible Penalties</h1>';
+        out += '<table data-role="table" id="my-table" data-mode="reflow"><thead><tr>';
+        // Headers
+        out += (rule.points.toString().includes("w") || rule.points.toString().includes("d")) ? "<th>Warning/Disable</th>" : "";
+        out += rule.points.toString().includes("m") ? "<th>Minor Penalty</th>" : "";
+        out += rule.points.toString().includes("M") ? "<th>Major Penalty</th>" : "";
+        out += rule.points.toString().includes("c") ? "<th>Card Issued</th>" : "";
+
+        out += '</tr></thead><tbody><tr>';
+        // Content
+        out += (rule.points.toString().includes("w") ? "<th>Warning</th>"  : rule.points.toString().includes("d") ? "<th>Robot Disabled </th>" : "");
+        out += rule.points.toString().includes("m1") ? "<th>5pts.</th>" : "";
+        out += rule.points.toString().includes("m2") ? "<th>5pts + 5pts every 5 seconds</th>" : "";
+        out += rule.points.toString().includes("M1") ? "<th>50pts.</th>" : "";
+        out += rule.points.toString().includes("M2") ? "<th>100pts.</th>" : "";
+        out += rule.points.toString().includes("cp") ? "<th>Yellow Card at Referee Discretion</th>" : "";
+        out += rule.points.toString().includes("cy") ? "<th>Immediate Yellow Card</th>" : "";
+        out += rule.points.toString().includes("cyr") ? "<th>Immediate Yellow and Red Card</th>" : "";
+
+
+
+        out += '</tr></tbody></table></div>'
+    }
+
+    out += '</div>';
+
+    return out;
 }
