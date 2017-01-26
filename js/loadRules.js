@@ -1,22 +1,46 @@
 $(function () {
     $('#mainList').hide();
-    $.getJSON("js/rules.json", function (rules) {
-            $('#listView').empty();
+    $('#footer').hide();
+
+    $('#listView').empty();
+    $('#listView').append("<li data-role=\"list-divider\">Saftey Rules</li>");
+
+    // Load S rules
+    $.getJSON("js/sRules.json", function (rules) {
+        $.each(rules, function (i, rule) {
+            $('#listView').append(generateRule(rule));
+            $('#page_body').append(generatePage(rule));
+        });
+        $('#listView').append("<li data-role=\"list-divider\">General Game Rules</li>");
+
+        // Load G rules
+        $.getJSON("js/gRules.json", function (rules) {
             $.each(rules, function (i, rule) {
                 $('#listView').append(generateRule(rule));
                 $('#page_body').append(generatePage(rule));
-                //$.mobile.initializePage()
             });
-            $('#listView').listview('refresh');
-            $('#mainList').slideDown(1000);
-        }
-    );
+            $('#listView').append("<li data-role=\"list-divider\">Game Specific Rules</li>");
 
-    //listView.appendChild();
+            // Load GS rules
+            $.getJSON("js/gsRules.json", function (rules) {
+
+                $.each(rules, function (i, rule) {
+                    $('#listView').append(generateRule(rule));
+                    $('#page_body').append(generatePage(rule));
+                });
+                // Refresh view
+                $('#listView').listview('refresh');
+                // Show
+                $('#mainList').slideDown(1000, function () {
+                    $('#footer').show(2000);
+                });
+            });
+        });
+    });
 });
 
 function generateRule(rule) {
-    return '<li data-filtertext=\"'+rule.filter+' '+rule.name+'\"><a href=\"#'+rule.id+'\" data-transition=\"slideup\"><h1>&#60;'+rule.id+'&#62; '+rule.name+'</h1></a></li>';
+    return '<li data-filtertext=\"'+rule.filter+' '+rule.name+' '+ rule.id+'\"><a href=\"#'+rule.id+'\" data-transition=\"slideup\"><h1>&#60;'+rule.id+'&#62; '+rule.name+'</h1></a></li>';
 }
 
 String.prototype.replaceAll = function(search, replacement) {

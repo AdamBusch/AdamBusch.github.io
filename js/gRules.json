@@ -50,7 +50,7 @@
 
   {
     "id":"G8",
-    "name": "Starting Game Play Early",
+    "name": "Stopping Game Play Late",
     "filter": "general game rules",
     "content":"Robots that do not stop playing the game at the end of the Autonomous\nor Driver-Controlled Periods when competition personnel or timer software announce the end of a Match\nperiod receive a Minor Penalty and the actions of the Robot occurring after the end of a Match period do not\ncount towards their Alliance’s Score. Referees have the option of issuing a Major Penalty in place of the\nMinor Penalty if the late stop results in a competitive advantage (other than Scoring) for the offending\nAlliance. "
   },
@@ -74,6 +74,111 @@
     "name": "Drive Team Coach Driver Station Control ",
     "filter": "general game rules",
     "content":"During the Driver-Controlled Period, Robots must be\nremotely operated only by the Drivers using the Gamepads connected to the Team’s Driver Station and/or by\nsoftware running in the on-board Robot control system. The first instance of Coach controlling (e.g. operating\na Gamepad) will result in a warning, with any following instances resulting in a Major Penalty. During the\nDriver-Controlled Period, Drive Team Coaches and/or Drivers are allowed to hold the Team’s Driver Station\nAndroid Device and interact with it to select an Op Mode, view information displayed on the screen, and\ninitialize, start, stop, and reset the Robot."
+  },
+
+  {
+    "id":"G12",
+    "name": "Recording the Score After Objects Come to Rest",
+    "filter": "general game rules",
+    "content": "Referee scoresheets will be filled out at the\nend of the Autonomous and Driver-Controlled Periods when all objects on the Playing Field have come to\nrest. A change in the state of a Game Element or Robot that occurs before a referee records the Score on\nthe scoresheet will affect the Match Score. A change in state of a Game Element or Robot after its Score is\nrecorded on the scoresheet will not change an already-recorded Score."
+  },
+
+  {
+    "id":"G13",
+    "name": "Robots Deliberately Detaching Parts",
+    "filter": "general game rules",
+    "content": "Robots may not deliberately detach parts during a Match,\nor leave mechanisms on the Playing Field. Consequence of deliberately detaching a part is a Minor Penalty\nif it does not Block an opposing Alliance Robot or goal. If a deliberately-detached component or mechanism\naffects gameplay by any Robot, the offending Robot will receive a Major Penalty and will be issued a Yellow\nCard. Robot parts that are released but remain connected by a tether and interfere with an opposing\nAlliance Robot are considered detached for the purposes of this rule. "
+  },
+
+  {
+    "id":"G14",
+    "name": "Robots Grasping Game Elements",
+    "filter": "general game rules",
+    "content": "Robots may not grab, grasp and/or attach to any Game\nElement or structure other than Scoring Elements, unless specifically allowed by game-specific rule(s) listed\nin Section 1.6.3. The first instance will result in a warning with any following violations resulting in a Major\nPenalty."
+  },
+
+  {
+    "id":"G15",
+    "name": "Destruction, Damage, Tipping, etc",
+    "filter": "general game rules",
+    "content": "Strategies and/or mechanisms aimed solely at the\ndestruction, damage, tipping over, or entanglement of Robots or Game Elements are not in the spirit of the\nFIRST Tech Challenge and are not allowed. However, FIRST Tech Challenge games are highly interactive\nand Robot-to-Robot contact and defensive game play should be expected. Some tipping, entanglement, and\ndamage may occur as a part of normal game play. If the tipping, entanglement, or damage is ruled to be\ndeliberate or chronic, the offending Team will receive a Major Penalty and a Yellow Card. "
+  },
+
+  {
+    "id":"G16",
+    "name": "Pinning, Trapping, or Blocking Robots",
+    "filter": "general game rules",
+    "content": "A Robot cannot cause an opposing Alliance Robot to\nbecome Pinned, Trapped, or Blocked for more than five seconds. If a referee determines this rule is violated,\nthe offending Alliance will receive a Minor Penalty for every five seconds that they are in violation. If a referee\ndeclares a Pinning, Trapping, or Blocking warning during the Match, the offending Robot must move away at\nleast 0.9 m (3 feet), approximately 1.5 floor tiles, from the Pinned, Trapped, or Blocked Robot.\n<br><br>A Robot cannot incur this type of Penalty during the Autonomous Period unless it is determined by the\nReferee to be part of a deliberate strategy. If the violation happens during the Autonomous Period, the first\naction done by the offending Robot during the Driver-Controlled Period must be to move away from the\nPinned, Trapped, or Blocked Robot or a Minor Penalty will be assessed immediately and again for every five\nseconds that they are in violation. Game-specific rule(s) listed in Section 1.6.3 that further define Pinning,\nTrapping, or Blocking take precedence over this general game rule."
+  },
+
+  {
+    "id":"G17",
+    "name": "Forcing an Opponent to Break a Rule",
+    "filter": "general game rules",
+    "content": "The actions of an Alliance or their Robots shall not cause\nan opposing Alliance or Robot to break a rule and thus incur Penalties. Any forced rule violations committed\nby the affected Alliance shall be excused, and no Penalties will be assigned."
+  },
+
+  {
+    "id":"G18",
+    "name": "Removing Game Elements from the Playing Field",
+    "filter": "general game rules",
+    "content": "Robots may not deliberately remove Game\nElements from the Playing Field during a Match. Game Elements that incidentally fall Outside the Playing\nField will be returned to the Playing Field by field personnel at the earliest safe and convenient opportunity.\nGame Elements removed from the Playing Field in an attempt to Score are also not subject to this Penalty.\nTeams deliberately removing Game Elements from the Playing Field will incur a Minor Penalty per Game\nElement removed from the Playing Field. Game-specific rule(s) listed in Section 1.6.3 that allow the removal\nof Scoring Elements from the Playing Field take precedence over this general game rule. "
+  },
+
+  {
+    "id":"G19",
+    "name": "Scoring Elements in Contact with Robots",
+    "filter": "general game rules",
+    "content": "Scoring Elements that are in contact with a Robot on\nthe corresponding Alliance for the Vortex have zero Score value when referees record the Score at the end\nof the Autonomous and Driver-Controlled Periods. Game-specific rule(s) listed in Section 1.6.3 that allow\nRobot contact with Scoring Elements take precedence over this general game rule."
+  },
+
+  {
+    "id":"G20",
+    "name": "Post-Match Removal of Game Elements from Robots",
+    "filter": "general game rules",
+    "content": "Robots must be designed to permit easy\nremoval of Game Elements from any grasping, containing, or holding mechanism after the Match. Robots\nshould also be able to be removed from the Playing Field without damaging the Playing Field. A Minor\nPenalty will be assessed for violations of this rule.\nThe intent of this rule is to have timely removal of Robots from the Playing Field following a Match"
+  },
+  {
+    "id":"G21",
+    "name": "Robot Manipulation of Scoring Elements",
+    "filter": "general game rules",
+    "content": "Scoring Elements that are Possessed by a Robot are\nconsidered to be part of the Robot."
+  },
+
+  {
+    "id":"G22",
+    "name": "Robot or Scoring Elements In Two or More Scoring Areas",
+    "filter": "general game rules",
+    "content": "Robots or Scoring Elements that are\nIn two or more Scoring Areas earn points only for the highest value achievement. If the achievement values\nare equal, only one achievement counts as Scored. Exceptions to this general rule may be specified in the\nGame Play section or in the game-specific rules."
+  },
+
+  {
+    "id":"G23",
+    "name": "Disabled Robot Eligibility",
+    "filter": "general game rules",
+    "content": "If a referee Disables a Robot, it will not be eligible to Score or earn\npoints for the remainder of the Match. A Disabled Robot (whether referee induced or failure) will not be able\nto earn penalties after becoming Disabled."
+  },
+
+  {
+
+    "id":"G24",
+    "name": "Playing Field Tolerances",
+    "filter": "general game rules",
+    "content": "Playing Field and Game Elements will start each Match with tolerances\nthat may vary by as much as +/-2.5cm (1.0 inch). Teams must design their Robots accordingly."
+  },
+
+  {
+    "id":"G25",
+    "name": "Match Replay",
+    "filter": "general game rules",
+    "content": "Matches are replayed at the discretion of the Head Referee only for a failure of a\nGame Element or verified Wi-Fi interference that was likely to have impacted which Alliance won the Match.\n<br><br>Unexpected Robot behavior in itself will not result in a Match replay. Team-induced failures, such as low\nbattery conditions, processor sleep time-outs, Robot mechanical/electrical/software/communication failures,\netc. are NOT valid justifications for a replaying of a Match."
+  },
+
+  {
+    "id":"G26",
+    "name": "Egregious Behavior",
+    "filter": "general game rules",
+    "content": "Egregious Robot or Team member behavior at the Playing Field, as\ndetermined by the referees, will result in a Major Penalty and issuance of a Yellow Card and/or Red Card.\nSubsequent violations will result in Team Disqualification from the tournament. Egregious behavior includes,\nbut is not limited to, repeated and/or flagrant violation of game rules, unsafe behavior or actions, and uncivil\nbehavior towards Drivers, Coaches, competition personnel, or event attendees."
   }
 
 ]

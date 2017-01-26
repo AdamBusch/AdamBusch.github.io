@@ -1,0 +1,22 @@
+[
+  {
+    "id":"S1",
+    "name":"Unsafe Robot and Playing Field Damage",
+    "filter":"safety rules",
+    "content": "If at any time the Robot operation is deemed unsafe or\nhas damaged the Playing Field or another Robot, by the determination of the referees, the offending Robot\nmay be Disabled and the Team may be issued a Yellow Card. Re-inspection of the Robot is required before\nit may play another Match.\n<br><br>The intent of this rule is to immediately stop unsafe Robot actions or Playing Field Damage that is likely to\npersist with continued Robot operation. Robots that are able to continue safe operation without damaging\nthe Playing Field will receive a warning and may continue to play the Match. Robots will be Disabled for\nunsafe operation or Playing Field Damage that occurs after the first warning for the Tournament."
+  },
+
+  {
+    "id":"S2",
+    "name":"Robot Extension Outside the Playing Field Perimeter",
+    "filter":"safety rules",
+    "content": "If any portion of the Robot makes contact\nwith anything Outside the Playing Field Perimeter, the Team will be issued a Yellow Card and it may be\nDisabled immediately for the remainder of the Match, unless allowed by game-specific rule(s) listed in\nSection 1.6.3. See the game definitions in section 1.4 for a complete description of the Playing Field\nPerimeter."
+  },
+
+  {
+    "id":"S3",
+    "name":"Safety Gear",
+    "filter":"safety rules",
+    "content": "All members of the Drive Team are required to wear safety glasses and shoes with\nclosed-toes and a closed-back. If any member of the Drive Team is not wearing these safety items, the\nreferee will issue a warning and if the situation is not remedied within thirty seconds, the offending\nmember(s) of the Drive Team must leave the Competition Area for the remainder of the Match and may not\nbe replaced by another Team member. Failure to comply with a request to leave the Competition Area\nviolates rule <G26>."
+  }
+]

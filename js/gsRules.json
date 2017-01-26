@@ -1,0 +1,116 @@
+[
+  {
+    "id":"GS1",
+    "name": "Controlling/Possessing Particles",
+    "filter": "game specific rules",
+    "content": "Once a Match begins, a Robot may Control or Possess any\nquantity of their Alliance’s Particles."
+  },
+
+  {
+    "id":"GS2",
+    "name": "Particle Scoring Eligibility",
+    "filter": "game specific rules",
+    "content": "After Scoring, Particles must make contact with the Playing Field\nFloor before they are eligible to be Scored again. Any Particles Scored in violation of this rule will have a\nScore value of zero (0)."
+  },
+
+  {
+    "id":"GS3",
+    "name": "Corner Vortex Scoring Violations",
+    "filter": "game specific rules",
+    "content": "Robots may not make contact with the Particle Return, break\nthe vertical plane of the outside (facing the Playing Field Wall) vertical face of the Vortex Bar (see Figure\n1.3-3), or interact with a Particle once it has been released through the Corner Vortex. Teams will be\nassessed a Minor Penalty for every occurrence of violating this rule. Actions that are Inadvertent and\nInconsequential will not be Penalized. Robots are allowed to make contact with the Corner Vortex Wall."
+  },
+
+  {
+    "id":"GS4",
+    "name": "Drive Teams Touching Robots or Driver Stations after Beacon Randomization",
+    "filter": "game specific rules",
+    "content": "Drive Teams\nare not allowed to touch or interact with their Robots or Driver Stations once field personnel have\nrandomized the first Beacon. If this occurs, a Minor Penalty will be assessed per Robot and the affected\nRobots are not eligible to Claim a Beacon in the Autonomous Period. This Penalty only affects the offending\nTeam. The non-offending Alliance Partner Robot remains eligible for the Beacon Scoring achievement."
+  },
+
+  {
+    "id":"GS5",
+    "name": "Drive Team or Robot Pressing the Beacon Randomization Button",
+    "filter": "game specific rules",
+    "content": "Drive Teams and Robots\nare not allowed to press the randomization button (or power button if it exists) on the Beacon at any time. A\nMajor Penalty will be assessed for violating this rule."
+  },
+
+  {
+    "id":"GS6",
+    "name": "Opposing Alliance’s Beacon during Autonomous Period",
+    "filter": "game specific rules",
+    "content": "Robots are not allowed to press the\nbuttons on a Beacon located in the opposing Alliance’s Area during the Autonomous Period. A Major\nPenalty will be assessed for violating this rule and the illegally Claimed Beacon will have zero Autonomous\nScore value for the offending Alliance. Bonus Particles will not be awarded to the offending Alliance as well.\nHowever, the non-offending Alliance remains eligible to earn a Beacon Score and bonus Particle. Field\nPersonnel will randomize an illegally Claimed Beacon before the start of the Driver-Controlled Period."
+  },
+
+  {
+    "id":"GS7",
+    "name": "Autonomous Period Robot Keep Out Area",
+    "filter": "game specific rules",
+    "content": "Robots may not go Inside the opposing Alliance’sArea of the Playing Field during the first ten seconds of the Autonomous Period. A Major Penalty will be\nassessed for violating this rule and any Scoring that occurs in the opposing Alliance’s Area by the offending\nRobot will not benefit the offending Alliance. The red and blue gaffers tape on the Playing Field Floor bisects\nthe Playing Field into equal-sized Alliance Areas. Robots may enter the black painted Area of the Center\nVortex Base at any time.\n<br><br>The intent of this rule is to delay the start of defensive strategies by requiring Robots to stay Completely\nInside their Alliance’s Area during the first ten seconds of the Autonomous Period. The unpredictability of\nevents during the Autonomous Period may result in unintentional entry into the opposing Alliance Area. For\nexample, Robot collisions may result in an Inadvertent ingress into the opposing Alliance Area. Ingress into\nthe opposing Alliance Area that is Inadvertent and Inconsequential will not be Penalized. Entering into the\nopposing Alliance Area during the first ten seconds of the Autonomous Period that results in an Alliance\ngaining an advantage is not Inconsequential nor Inadvertent and it will be Penalized."
+  },
+
+  {
+    "id":"GS8",
+    "name": "Robot Height",
+    "filter": "game specific rules",
+    "content": "Robots may not extend higher than 29 inches (73.6 cm), the approximate clearance\nheight of the Center Vortex Particle deflector, except during the End Game. An immediate Minor Penalty will\nbe assessed per occurrence for violating this rule. Additional Minor Penalties will be assessed for each five\nsecond interval that this situation continues."
+  },
+
+  {
+    "id":"GS9",
+    "name": "Particle Interference",
+    "filter": "game specific rules",
+    "content": "A Particle that has been fully released from a Robot (i.e. it is not in contact\nwith any part of the Robot that released it) and is above 18 inches (45.7 cm) from the Playing Field with a\nrealistic intention of Scoring into any of the Vortexes may NOT be intentionally interfered with by an\nopposing Alliance’s Robot. Each interfered Particle will be awarded the points it would have received had it\nScored. A Particle that contacts an opposing Alliance Robot after a missed Scoring attempt in a Vortex is\nnot protected by this rule.\n<br><br>Mechanisms designed for the sole purpose of interfering with launched Particles are prohibited.\n<br><br>Repeated or continued violations of this rule are likely to escalate to issuance of Yellow Cards rapidly (i.e.\nthe threshold for egregious or repeated violations is relatively low)."
+  },
+
+  {
+    "id":"GS10",
+    "name": "Controlling or Blocking an Opposing Alliance’s Scoring Elements",
+    "filter": "game specific rules",
+    "content": "Robots may not Control or\nBlock Access to the opposing Alliance’s Cap Ball or Particles. The first instance will result in a warning with any\nfollowing violations resulting in a Major Penalty and an additional Minor Penalty assessed for every five\nseconds that the rule violation persists. If the referee declares a Blocking Access warning during the DriverControlled\nPeriod, the offending Robot must move away at least 0.9 m (3 feet), approximately 1.5 floor tiles\nfrom the Blocked Scoring Element.\n<br><br>The intent of this rule is to allow Teams access to and from their Scoring Elements. Blocking and Trapping\nmeans denying ALL access, so general Robot movement with respect to other Robots should not be\nconsidered in violation unless there is no other way to traverse the Playing Field or get the Scoring Element.\nAlso note that this rule requires attempted action on the part of the opposing Alliance. See also Rule <G16>."
+  },
+
+  {
+    "id":"GS11",
+    "name": "Cap Ball Interference",
+    "filter": "game specific rules",
+    "content": "During the End Game, Robots may not interfere with an opposing Alliance\nRobot that Possesses a lifted Cap Ball above the Playing Field Floor. A Major Penalty will be assessed per\noccurrence for violating this rule and a Minor Penalty will be assessed for every five seconds that the\ncondition persists.\n<br><br>The intent of this rule is to allow Robots to Score the Cap Ball without interference. A Robot interaction with\nan opposing Alliance Robot may be ruled at the referee’s discretion to be Inconsequential and Inadvertent\nand will not be Penalized."
+  },
+
+  {
+    "id":"GS12",
+    "name": "De-Scoring a Capped Center Vortex",
+    "filter": "game specific rules",
+    "content": "Robots may not de-Score an opposing Alliance’s Capped\nCenter Vortex during the Driver-Controlled Period. The offending Alliance will be assessed two Major\nPenalties for violating this rule."
+  },
+
+  {
+    "id":"GS13",
+    "name": "Blocking an Opposing Alliance’s Center Vortex",
+    "filter": "game specific rules",
+    "content": "A Robot may not place any Cap Ball or Robot\npart In the opposing Alliance’s Center Vortex. A Major Penalty and Yellow Card will be assessed and\nadditional Minor Penalties will be assessed every five seconds for the remainder of the Match or until the\nblockage is removed by the offending Alliance."
+  },
+
+  {
+    "id":"GS14",
+    "name": "Blocking Access to an Opposing Alliance’s Corner Vortex",
+    "filter": "game specific rules",
+    "content": "During the Driver-Controlled\nPeriod, a Robot may not obstruct ALL access, prevent a Robot from escaping, or interfere with the opposing\nAlliance’s Corner Vortex when an opposing Alliance Robot is actively attempting to access or escape from\nit. The offending Alliance will immediately incur a Minor Penalty. Additional Minor Penalties will be assessed\nfor every five seconds that the condition persists. Repeated or continued violations of this rule are likely to\nescalate to issuance of Yellow Cards rapidly (i.e. the threshold for egregious or repeated violations is\nrelatively low).\n<br><br>The intent of this rule is to allow reasonable Robot ingress and egress to an Alliance’s Corner Vortex. A\nRobot In an opposing Alliance Corner Vortex that is not Inconsequential and Inadvertent is Blocking Access\nand it will be Penalized. Driving in front of the opposing Alliance’s Corner Vortex while the opponent is not\ntrying to Score there can be considered Inconsequential and Inadvertent."
+  },
+
+  {
+    "id":"GS15",
+    "name": "Starting the End Game Achievements Early",
+    "filter": "game specific rules",
+    "content": "Robots may not Intentionally perform any End\nGame scoring achievements prior to the start of the End Game. A Robot that begins the End Game\nachievements early will cause the Alliance to lose the right to Score those achievements. Intentional\nControlled movement of an Alliance’s own Cap Ball is allowed at all times.\n<br><br>The intent of this rule is to prevent Robots from deliberately starting the End Game achievements early. The\nmovement of Robots around the Playing Field will likely cause the Cap Balls to make Inadvertent contact\nwith a Corner Vortex or to rise slightly above the Playing Field floor tiles during normal game play. These\nand similar Inadvertent and Inconsequential actions will not be Penalized."
+  },
+
+
+  {
+    "id":"GS16",
+    "name": "Cap Balls in Contact with a Robot",
+    "filter": "game specific rules",
+    "content": "Cap Balls in contact with a Robot on any Alliance remain\neligible to be counted as Scored. If a Cap Ball that Caps a Center Vortex is in contact with the Robot on the\ncorresponding Alliance, it will only count as being at the Low or High Height for the purposes of Scoring."
+  }
+
+
+]
