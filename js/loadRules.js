@@ -70,10 +70,10 @@ function generatePage(rule) {
         out += '</tr></thead><tbody><tr>';
         // Content
         out += (rule.points.toString().includes("w") ? "<td>Warning</td>"  : rule.points.toString().includes("d") ? "<td>Robot Disabled </td>" : "");
-        out += rule.points.toString().includes("m1") ? "<td>5pts.</td>" : "";
+        out += rule.points.toString().includes("m1") ? "<td>5pts</td>" : "";
         out += rule.points.toString().includes("m2") ? "<td>5pts + 5pts every 5 seconds</td>" : "";
-        out += rule.points.toString().includes("M1") ? "<td>50pts.</td>" : "";
-        out += rule.points.toString().includes("M2") ? "<td>100pts.</td>" : "";
+        out += rule.points.toString().includes("M1") ? "<td>50pts</td>" : "";
+        out += rule.points.toString().includes("M2") ? "<td>100pts</td>" : "";
         out += rule.points.toString().includes("cp") ? "<td>Possible Yellow Card</td>" : "";
         out += rule.points.toString().includes("cy") ? "<td>Yellow Card</td>" : "";
         out += rule.points.toString().includes("cr") ? "<td>Yellow/Red Card</td> " : "";
