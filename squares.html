@@ -36,7 +36,17 @@
   .cell-open { background: #2a2a3e; cursor: pointer; }
   .cell-open:hover { background: #3a3a5e; }
   .cell-claimed { cursor: default; }
-  .cell-winner { outline: 3px solid gold; outline-offset: -3px; }
+
+  @keyframes rainbow {
+    0%   { border-color: #e6194b; }
+    16%  { border-color: #f58231; }
+    33%  { border-color: #ffe119; }
+    50%  { border-color: #3cb44b; }
+    66%  { border-color: #4363d8; }
+    83%  { border-color: #911eb4; }
+    100% { border-color: #e6194b; }
+  }
+  .cell-winner { border: 4px solid; animation: rainbow 1.5s linear infinite; }
 
   /* Draft info */
   .draft-info { text-align: center; margin: 10px 0; padding: 10px; background: #16213e; border-radius: 8px; font-size: 1rem; }
