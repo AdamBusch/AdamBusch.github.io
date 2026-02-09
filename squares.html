@@ -79,10 +79,10 @@
   <h2>Teams</h2>
   <div class="team-inputs">
     <label>Column Team (top)
-      <input type="text" id="team-col" placeholder="e.g. Chiefs" value="Chiefs">
+      <input type="text" id="team-col" placeholder="e.g. Seahawks" value="Seahawks">
     </label>
     <label>Row Team (side)
-      <input type="text" id="team-row" placeholder="e.g. Eagles" value="Eagles">
+      <input type="text" id="team-row" placeholder="e.g. Patriots" value="Patriots">
     </label>
   </div>
 
@@ -139,8 +139,8 @@ const COLORS = [
 function getDefaultState() {
   return {
     phase: 'setup',
-    teamCol: 'Chiefs',
-    teamRow: 'Eagles',
+    teamCol: 'Seahawks',
+    teamRow: 'Patriots',
     participants: [],
     grid: Array.from({length: 10}, () => Array(10).fill(null)),
     colNumbers: [],
@@ -168,6 +168,9 @@ function load() {
     try {
       const parsed = JSON.parse(raw);
       state = { ...getDefaultState(), ...parsed };
+      // Migrate old team names
+      if (state.teamCol === 'Chiefs') state.teamCol = 'Seahawks';
+      if (state.teamRow === 'Eagles') state.teamRow = 'Patriots';
     } catch(e) {
       state = getDefaultState();
     }
