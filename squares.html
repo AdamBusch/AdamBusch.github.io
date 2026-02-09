@@ -432,6 +432,8 @@ document.getElementById('add-participant-btn').addEventListener('click', addPart
 document.getElementById('participant-input').addEventListener('keydown', e => {
   if (e.key === 'Enter') addParticipant();
 });
+document.getElementById('team-col').addEventListener('input', e => { state.teamCol = e.target.value; save(); });
+document.getElementById('team-row').addEventListener('input', e => { state.teamRow = e.target.value; save(); });
 document.getElementById('start-draft-btn').addEventListener('click', startDraft);
 document.getElementById('back-to-setup-btn').addEventListener('click', () => {
   if (!confirm('Go back to setup? Draft progress will be lost.')) return;
