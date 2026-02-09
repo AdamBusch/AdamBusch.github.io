@@ -168,6 +168,7 @@
   </div>
 
   <div class="actions">
+    <button class="btn-secondary" id="rename-teams-btn">Rename Teams</button>
     <button class="btn-danger" id="reset-btn">Reset Game</button>
   </div>
 </div>
@@ -459,6 +460,18 @@ function updateScore(el) {
   renderBoard();
 }
 
+// ---- Rename Teams ----
+function renameTeams() {
+  const newCol = prompt('Column team (top):', state.teamCol);
+  if (newCol === null) return;
+  const newRow = prompt('Row team (side):', state.teamRow);
+  if (newRow === null) return;
+  state.teamCol = newCol.trim() || state.teamCol;
+  state.teamRow = newRow.trim() || state.teamRow;
+  save();
+  renderBoard();
+}
+
 // ---- Reset ----
 function resetGame() {
   if (!confirm('Reset the entire game? This cannot be undone.')) return;
@@ -637,6 +650,7 @@ document.getElementById('back-to-setup-btn').addEventListener('click', () => {
   showScreen('setup-screen');
   renderSetup();
 });
+document.getElementById('rename-teams-btn').addEventListener('click', renameTeams);
 document.getElementById('reset-btn').addEventListener('click', resetGame);
 document.getElementById('live-toggle-btn').addEventListener('click', toggleLive);
 
