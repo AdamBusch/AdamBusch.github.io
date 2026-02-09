@@ -196,9 +196,6 @@ function load() {
     try {
       const parsed = JSON.parse(raw);
       state = { ...getDefaultState(), ...parsed };
-      // Migrate old team names
-      if (state.teamCol === 'Chiefs') state.teamCol = 'Seahawks';
-      if (state.teamRow === 'Eagles') state.teamRow = 'Patriots';
     } catch(e) {
       state = getDefaultState();
     }
