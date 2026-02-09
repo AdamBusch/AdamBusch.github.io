@@ -26,6 +26,26 @@
   .team-inputs { display: flex; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
   .team-inputs label { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; }
 
+  /* Football side animations */
+  .field-border { position: relative; overflow: hidden; padding: 0 40px; }
+  .field-border .sideline { position: absolute; top: 0; bottom: 0; width: 36px; overflow: hidden; pointer-events: none; }
+  .field-border .sideline.left { left: 0; }
+  .field-border .sideline.right { right: 0; }
+  .field-border .sideline .floater {
+    position: absolute; font-size: 1.2rem; opacity: 0.7;
+    animation: floatUp linear infinite;
+  }
+  @keyframes floatUp {
+    0%   { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+    50%  { opacity: 1; }
+    100% { transform: translateY(-600px) rotate(360deg); opacity: 0; }
+  }
+  .yard-lines { position: absolute; top: 0; bottom: 0; width: 100%; pointer-events: none; }
+  .yard-lines .tick {
+    position: absolute; left: 0; right: 0; height: 1px;
+    background: rgba(255,255,255,0.06);
+  }
+
   /* Grid */
   .grid-wrapper { overflow-x: auto; margin: 12px 0; }
   .grid-table { border-collapse: collapse; margin: 0 auto; }
@@ -104,7 +124,11 @@
     Pick #<span id="pick-number">1</span> of 100 &mdash;
     <span class="current-drafter" id="current-drafter"></span>'s turn
   </div>
-  <div class="grid-wrapper" id="draft-grid-wrapper"></div>
+  <div class="field-border">
+    <div class="sideline left" id="draft-sideline-left"></div>
+    <div class="grid-wrapper" id="draft-grid-wrapper"></div>
+    <div class="sideline right" id="draft-sideline-right"></div>
+  </div>
   <div class="actions">
     <button class="btn-danger" id="back-to-setup-btn">Back to Setup</button>
   </div>
@@ -112,7 +136,11 @@
 
 <!-- ===== BOARD SCREEN ===== -->
 <div id="board-screen" class="screen">
-  <div class="grid-wrapper" id="board-grid-wrapper"></div>
+  <div class="field-border">
+    <div class="sideline left" id="board-sideline-left"></div>
+    <div class="grid-wrapper" id="board-grid-wrapper"></div>
+    <div class="sideline right" id="board-sideline-right"></div>
+  </div>
 
   <div class="legend" id="legend"></div>
 
@@ -279,6 +307,7 @@ function renderDraft() {
   const bg = colorFor(state.draftOrder[state.draftIndex]);
   const info = document.querySelector('.draft-info');
   info.style.borderLeft = `6px solid ${bg}`;
+  initSidelines('draft');
 }
 
 function draftPick(r, c) {
@@ -373,6 +402,7 @@ function renderBoard() {
   });
   lhtml += '</div>';
   legend.innerHTML = lhtml;
+  initSidelines('board');
 
   // Quarters
   const qDiv = document.getElementById('quarters');
@@ -428,6 +458,30 @@ function esc(str) {
   const d = document.createElement('div');
   d.textContent = str;
   return d.innerHTML;
+}
+
+// ---- Sideline animations ----
+const FOOTBALL_EMOJIS = ['\uD83C\uDFC8','\uD83C\uDFC6','\u26BD','\uD83C\uDFAF','\uD83E\uDD47','\uD83C\uDFF5\uFE0F'];
+function populateSideline(el) {
+  if (!el) return;
+  el.innerHTML = '';
+  for (let i = 0; i < 6; i++) {
+    const span = document.createElement('span');
+    span.className = 'floater';
+    span.textContent = FOOTBALL_EMOJIS[i % FOOTBALL_EMOJIS.length];
+    const dur = 4 + Math.random() * 6;
+    const delay = Math.random() * dur;
+    const left = Math.random() * 16;
+    span.style.animationDuration = dur + 's';
+    span.style.animationDelay = '-' + delay + 's';
+    span.style.left = left + 'px';
+    span.style.bottom = '-30px';
+    el.appendChild(span);
+  }
+}
+function initSidelines(prefix) {
+  populateSideline(document.getElementById(prefix + '-sideline-left'));
+  populateSideline(document.getElementById(prefix + '-sideline-right'));
 }
 
 // ---- Event listeners ----
