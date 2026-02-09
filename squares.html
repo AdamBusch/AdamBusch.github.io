@@ -514,8 +514,29 @@ function initSidelines(prefix) {
 
 // ---- Live Scores ----
 const ESPN_URL = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard';
+const CORS_PROXIES = [
+  url => url,
+  url => 'https://corsproxy.io/?' + encodeURIComponent(url),
+  url => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(url),
+];
+let workingProxy = 0;
 let liveInterval = null;
 let liveEnabled = false;
+
+async function fetchWithProxy(url) {
+  // Try the last working proxy first, then cycle through others
+  const order = [workingProxy, ...CORS_PROXIES.map((_,i) => i).filter(i => i !== workingProxy)];
+  for (const i of order) {
+    try {
+      const resp = await fetch(CORS_PROXIES[i](url));
+      if (!resp.ok) continue;
+      const data = await resp.json();
+      workingProxy = i;
+      return data;
+    } catch(e) { /* try next */ }
+  }
+  throw new Error('All fetch methods failed (CORS blocked or network error)');
+}
 
 function normTeam(name) {
   return name.toLowerCase().replace(/[^a-z]/g, '');
@@ -576,9 +597,7 @@ async function fetchLiveScores() {
   const dot = document.getElementById('live-dot');
   const statusEl = document.getElementById('live-status');
   try {
-    const resp = await fetch(ESPN_URL);
-    if (!resp.ok) throw new Error('HTTP ' + resp.status);
-    const data = await resp.json();
+    const data = await fetchWithProxy(ESPN_URL);
     const game = findGame(data);
     if (!game) {
       dot.className = 'live-dot error';
