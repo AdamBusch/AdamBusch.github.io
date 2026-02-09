@@ -83,6 +83,19 @@
 
   .actions { text-align: center; margin-top: 16px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
 
+  /* Live scores */
+  .live-bar { text-align: center; margin: 10px 0; padding: 8px; background: #16213e; border-radius: 8px; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
+  .live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; }
+  .live-dot.on { background: #3cb44b; animation: pulse 1.5s ease infinite; }
+  .live-dot.off { background: #888; }
+  .live-dot.error { background: #e94560; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+  .btn-live { background: #2e7d32; color: #fff; font-size: 0.8rem; padding: 5px 12px; }
+  .btn-live:hover { background: #388e3c; }
+  .btn-live.active { background: #c62828; }
+  .btn-live.active:hover { background: #d32f2f; }
+  .live-game-status { color: #aaa; font-size: 0.75rem; }
+
   /* Participant colors */
   .legend { margin: 12px 0; }
   .legend-items { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -146,6 +159,11 @@
 
   <div class="scores-section">
     <h2 style="text-align:center;">Scores</h2>
+    <div class="live-bar">
+      <span class="live-dot off" id="live-dot"></span>
+      <button class="btn-live" id="live-toggle-btn">Enable Live Scores</button>
+      <span class="live-game-status" id="live-status"></span>
+    </div>
     <div class="quarters" id="quarters"></div>
   </div>
 
@@ -481,6 +499,126 @@ function initSidelines(prefix) {
   populateSideline(document.getElementById(prefix + '-sideline-right'));
 }
 
+// ---- Live Scores ----
+const ESPN_URL = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard';
+let liveInterval = null;
+let liveEnabled = false;
+
+function normTeam(name) {
+  return name.toLowerCase().replace(/[^a-z]/g, '');
+}
+
+function findGame(data) {
+  const colNorm = normTeam(state.teamCol);
+  const rowNorm = normTeam(state.teamRow);
+  for (const event of (data.events || [])) {
+    const teams = (event.competitions || [{}])[0].competitors || [];
+    const names = teams.map(t => ({
+      norm: normTeam(t.team.displayName || ''),
+      short: normTeam(t.team.shortDisplayName || ''),
+      abbr: normTeam(t.team.abbreviation || ''),
+      name: normTeam(t.team.name || ''),
+    }));
+    const matchesCol = names.some(n => n.norm.includes(colNorm) || n.short.includes(colNorm) || n.abbr === colNorm || n.name === colNorm || colNorm.includes(n.name));
+    const matchesRow = names.some(n => n.norm.includes(rowNorm) || n.short.includes(rowNorm) || n.abbr === rowNorm || n.name === rowNorm || rowNorm.includes(n.name));
+    if (matchesCol && matchesRow) return event;
+  }
+  return null;
+}
+
+function extractScores(event) {
+  const comp = (event.competitions || [{}])[0];
+  const teams = comp.competitors || [];
+  const colNorm = normTeam(state.teamCol);
+  const rowNorm = normTeam(state.teamRow);
+  let colTeam = null, rowTeam = null;
+  for (const t of teams) {
+    const allNames = [t.team.displayName, t.team.shortDisplayName, t.team.abbreviation, t.team.name].map(n => normTeam(n || ''));
+    if (allNames.some(n => n.includes(colNorm) || colNorm.includes(n))) colTeam = t;
+    if (allNames.some(n => n.includes(rowNorm) || rowNorm.includes(n))) rowTeam = t;
+  }
+  if (!colTeam || !rowTeam) return null;
+
+  const colLine = colTeam.linescores || [];
+  const rowLine = rowTeam.linescores || [];
+  const status = comp.status || {};
+  const detail = (status.type || {}).shortDetail || '';
+
+  const scores = {};
+  const quarters = ['Q1','Q2','Q3','Q4'];
+  for (let i = 0; i < 4; i++) {
+    // Cumulative scores through each quarter
+    let colCum = 0, rowCum = 0;
+    let hasData = false;
+    for (let j = 0; j <= i; j++) {
+      if (colLine[j]) { colCum += colLine[j].value || 0; hasData = true; }
+      if (rowLine[j]) { rowCum += rowLine[j].value || 0; hasData = true; }
+    }
+    scores[quarters[i]] = hasData ? { col: colCum, row: rowCum } : { col: '', row: '' };
+  }
+  return { scores, detail };
+}
+
+async function fetchLiveScores() {
+  const dot = document.getElementById('live-dot');
+  const statusEl = document.getElementById('live-status');
+  try {
+    const resp = await fetch(ESPN_URL);
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    const game = findGame(data);
+    if (!game) {
+      dot.className = 'live-dot error';
+      statusEl.textContent = 'No matching game found for ' + state.teamCol + ' vs ' + state.teamRow;
+      return;
+    }
+    const result = extractScores(game);
+    if (!result) {
+      dot.className = 'live-dot error';
+      statusEl.textContent = 'Could not parse scores';
+      return;
+    }
+    dot.className = 'live-dot on';
+    statusEl.textContent = result.detail + ' \u2014 updated ' + new Date().toLocaleTimeString();
+
+    let changed = false;
+    for (const q of ['Q1','Q2','Q3','Q4']) {
+      if (result.scores[q].col !== '' && (state.scores[q].col !== result.scores[q].col || state.scores[q].row !== result.scores[q].row)) {
+        state.scores[q] = result.scores[q];
+        changed = true;
+      }
+    }
+    if (changed) {
+      save();
+      renderBoard();
+    }
+  } catch(e) {
+    dot.className = 'live-dot error';
+    statusEl.textContent = 'Fetch error: ' + e.message;
+  }
+}
+
+function toggleLive() {
+  const btn = document.getElementById('live-toggle-btn');
+  const dot = document.getElementById('live-dot');
+  if (liveEnabled) {
+    liveEnabled = false;
+    clearInterval(liveInterval);
+    liveInterval = null;
+    btn.textContent = 'Enable Live Scores';
+    btn.classList.remove('active');
+    dot.className = 'live-dot off';
+    document.getElementById('live-status').textContent = '';
+  } else {
+    liveEnabled = true;
+    btn.textContent = 'Disable Live Scores';
+    btn.classList.add('active');
+    dot.className = 'live-dot on';
+    fetchLiveScores();
+    liveInterval = setInterval(fetchLiveScores, 30000);
+  }
+}
+
 // ---- Event listeners ----
 document.getElementById('add-participant-btn').addEventListener('click', addParticipant);
 document.getElementById('participant-input').addEventListener('keydown', e => {
@@ -500,6 +638,7 @@ document.getElementById('back-to-setup-btn').addEventListener('click', () => {
   renderSetup();
 });
 document.getElementById('reset-btn').addEventListener('click', resetGame);
+document.getElementById('live-toggle-btn').addEventListener('click', toggleLive);
 
 // ---- Init ----
 load();
