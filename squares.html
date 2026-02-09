@@ -522,8 +522,9 @@ function initSidelines(prefix) {
 }
 
 // ---- Live Scores ----
-// seasontype=3 = postseason, dates=2025 = 2025-26 NFL season
-const ESPN_URL = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?seasontype=3&dates=2025';
+// Build ESPN URL with today's date to get the live game
+const ESPN_DATE = new Date().toISOString().slice(0,10).replace(/-/g,'');
+const ESPN_URL = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=' + ESPN_DATE;
 const CORS_PROXIES = [
   url => url,
   url => 'https://corsproxy.io/?' + encodeURIComponent(url),
